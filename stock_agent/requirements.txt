@@ -1,0 +1,18 @@
+# HTTP + scraping
+requests==2.31.0
+beautifulsoup4==4.12.3
+trafilatura==1.9.0
+newspaper3k==0.2.8
+feedparser==6.0.11
+
+# Data
+pandas==2.2.0
+
+# AI
+groq==0.8.0
+httpx==0.27.0       # used by groq client
+
+# Utilities
+python-dotenv==1.0.1
+rich==13.7.0        # pretty terminal logging
+googlenewsdecoder==0.1.7
