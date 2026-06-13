@@ -6,16 +6,17 @@ import pandas as pd
 from config.settings import settings
 from utils.logger import log
 
-def narrow(df: pd.DataFrame, top_n: int) -> list:
+def narrow(df: pd.DataFrame, top_n: int, query: dict = None) -> list:
     log.info(f"Pre-ranking top {top_n} candidates via Groq...")
     
+    horizon = (query or {}).get('horizon', '2 months')
     stocks_json = df.to_json(orient="records")
     
     prompt_path = os.path.join(os.path.dirname(__file__), '..', 'prompts', 'prerank.txt')
     with open(prompt_path, "r") as f:
         prompt_template = f.read()
         
-    prompt = prompt_template.format(n=len(df), TOP_N=top_n, stocks_json=stocks_json)
+    prompt = prompt_template.format(n=len(df), TOP_N=top_n, horizon=horizon, stocks_json=stocks_json)
     
     client = Groq(api_key=settings.GROQ_API_KEY)
     

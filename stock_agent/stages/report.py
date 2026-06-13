@@ -24,7 +24,9 @@ def merge(candidates: list, summaries: dict) -> list:
 def synthesise(merged: list, query: dict, top_n: int) -> str:
     log.info(f"Generating final report for top {top_n} candidates via Groq...")
     
-    stocks_json = json.dumps(merged, indent=2, default=str)
+    # Only pass the final top_n to the synthesis prompt — keep context tight
+    top_candidates = merged[:top_n]
+    stocks_json = json.dumps(top_candidates, indent=2, default=str)
     
     prompt_path = os.path.join(os.path.dirname(__file__), '..', 'prompts', 'synthesis.txt')
     with open(prompt_path, "r") as f:
@@ -34,7 +36,7 @@ def synthesise(merged: list, query: dict, top_n: int) -> str:
     horizon = query.get('horizon', '60 days')
     
     prompt = prompt_template.format(
-        n=len(merged), 
+        n=len(top_candidates), 
         today=today, 
         horizon=horizon, 
         stocks_json=stocks_json

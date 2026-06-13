@@ -19,7 +19,7 @@ def run(query_name: str, top_n: int, use_cache: bool):
     log.info("Stage 1: Scraping screener.in...")
     df_raw = scraper.fetch(query_name, query, use_cache=use_cache)
     df_scored = technicals.score(df_raw)
-    candidates = prerank.narrow(df_scored, top_n=settings.TOP_N_FOR_NEWS)  # Ollama call #1
+    candidates = prerank.narrow(df_scored, query=query, top_n=settings.TOP_N_FOR_NEWS)
 
     # Stage 2
     log.info("Stage 2: Fetching news...")

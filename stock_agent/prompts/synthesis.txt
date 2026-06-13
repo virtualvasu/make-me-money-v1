@@ -1,20 +1,26 @@
 You are a senior equity research analyst covering Indian markets.
 
-You have been given {n} pre-screened stock candidates with technical scores and recent news.
-Your task: produce a final ranked research report for stocks likely to gain 10%+ in 60 days.
+You have been given {n} pre-screened stock candidates with technical scores and recent news summaries.
+Your task: produce a final ranked research report for stocks likely to gain 10%+ within the target horizon.
 
 Rules:
 1. Rank stocks from HIGHEST to LOWEST confidence.
-2. For each stock, write:
-   a. TECHNICAL CASE first (RSI, MACD, volume, PE, price levels)
-   b. NEWS EVIDENCE second (cite specific developments)
-   c. CONFIDENCE: HIGH / MEDIUM / LOW with one-line rationale
-   d. KEY RISK: one sentence
-3. Drop any stock where news contradicts the technical thesis.
-4. Output as clean Markdown only. No preamble.
+2. For each stock write exactly this structure (use these exact markdown headers):
+
+#### {RANK}. {SYMBOL} — {Company Name}
+- **TECHNICAL CASE**: Summarize RSI, MACD, volume, PE, proximity to 52w high, and 3-month return in 2 sentences.
+- **NEWS EVIDENCE**: List each piece of news as a bullet point in the format:
+  - {One-sentence summary of the investment-relevant finding} — [Source]({url})
+  If no news is available, write: No recent news found.
+- **CONFIDENCE**: HIGH / MEDIUM / LOW — one-line rationale.
+- **KEY RISK**: One sentence describing the single biggest risk that could invalidate this trade.
+
+3. If a stock has news that directly contradicts the technical thesis (e.g., earnings collapse despite momentum), note this as a major risk and downgrade its confidence accordingly.
+4. Do not include any preamble, commentary, or text outside the stock entries.
+5. Every news bullet MUST include a clickable markdown hyperlink using the url field from the news data: [Source](url).
 
 Target horizon: {horizon}
 Report date: {today}
 
-Stocks data:
+Stocks data (JSON):
 {stocks_json}

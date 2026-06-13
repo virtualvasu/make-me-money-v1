@@ -1,0 +1,91 @@
+{
+  "momentum_breakout": {
+    "description": "Mid/large cap stocks with strong momentum and rising volume",
+    "horizon": "2 months",
+    "screener_query": "Market Capitalization > 500 AND Volume > 500000 AND RSI > 55 AND RSI < 75 AND Return over 3Months > 10 AND Price to Earning < 40 AND MACD Signal > 0",
+    "sort_by": "Return over 3Months",
+    "sort_order": "desc",
+    "screener_url": "https://www.screener.in/screen/raw/?sort=Return+over+3Months&order=desc&query=Market+Capitalization+%3E+500+AND+Volume+%3E+500000+AND+RSI+%3E+55+AND+RSI+%3C+75+AND+Return+over+3Months+%3E+10+AND+Price+to+Earning+%3C+40+AND+MACD+Signal+%3E+0"
+  },
+
+  "oversold_reversal": {
+    "description": "Oversold quality stocks showing early reversal signals",
+    "horizon": "2 months",
+    "screener_query": "Market Capitalization > 200 AND RSI < 35 AND Return over 1Year > 0 AND Debt to equity < 1 AND Return on equity > 12",
+    "sort_by": "RSI",
+    "sort_order": "asc",
+    "screener_url": "https://www.screener.in/screen/raw/?sort=RSI&order=asc&query=Market+Capitalization+%3E+200+AND+RSI+%3C+35+AND+Return+over+1Year+%3E+0+AND+Debt+to+equity+%3C+1+AND+Return+on+equity+%3E+12"
+  },
+
+  "smallcap_growth": {
+    "description": "Small cap high growth companies with low PE",
+    "horizon": "2 months",
+    "screener_query": "Market Capitalization < 500 AND Market Capitalization > 50 AND Sales growth > 20 AND Profit growth > 20 AND Price to Earning < 25 AND RSI > 50",
+    "sort_by": "Sales growth",
+    "sort_order": "desc",
+    "screener_url": "https://www.screener.in/screen/raw/?sort=Sales+growth&order=desc&query=Market+Capitalization+%3C+500+AND+Market+Capitalization+%3E+50+AND+Sales+growth+%3E+20+AND+Profit+growth+%3E+20+AND+Price+to+Earning+%3C+25+AND+RSI+%3E+50"
+  },
+
+  "dividend_value": {
+    "description": "Blue chip value stocks with strong dividend support",
+    "horizon": "3 months",
+    "screener_query": "Dividend yield > 2 AND Price to Earning < 20 AND Return on equity > 15 AND Debt to equity < 0.5 AND Market Capitalization > 1000",
+    "sort_by": "Dividend yield",
+    "sort_order": "desc",
+    "screener_url": "https://www.screener.in/screen/raw/?sort=Dividend+yield&order=desc&query=Dividend+yield+%3E+2+AND+Price+to+Earning+%3C+20+AND+Return+on+equity+%3E+15+AND+Debt+to+equity+%3C+0.5+AND+Market+Capitalization+%3E+1000"
+  },
+
+  "quality_at_fair_value": {
+    "description": "High ROCE, low debt, reasonably priced quality businesses",
+    "horizon": "3 months",
+    "screener_query": "Return on capital employed > 20 AND Debt to equity < 0.3 AND Price to Earning < 30 AND Sales growth > 12 AND Market Capitalization > 1000",
+    "sort_by": "Return on capital employed",
+    "sort_order": "desc",
+    "screener_url": "https://www.screener.in/screen/raw/?sort=Return+on+capital+employed&order=desc&query=Return+on+capital+employed+%3E+20+AND+Debt+to+equity+%3C+0.3+AND+Price+to+Earning+%3C+30+AND+Sales+growth+%3E+12+AND+Market+Capitalization+%3E+1000"
+  },
+
+  "high_roce_compounder": {
+    "description": "Long-duration compounders with consistently high ROCE and earnings growth",
+    "horizon": "6 months",
+    "screener_query": "Return on capital employed > 25 AND Profit growth > 15 AND Sales growth > 15 AND Debt to equity < 0.5 AND Price to Earning < 50 AND Market Capitalization > 500",
+    "sort_by": "Return on capital employed",
+    "sort_order": "desc",
+    "screener_url": "https://www.screener.in/screen/raw/?sort=Return+on+capital+employed&order=desc&query=Return+on+capital+employed+%3E+25+AND+Profit+growth+%3E+15+AND+Sales+growth+%3E+15+AND+Debt+to+equity+%3C+0.5+AND+Price+to+Earning+%3C+50+AND+Market+Capitalization+%3E+500"
+  },
+
+  "undervalued_midcap": {
+    "description": "Midcap stocks trading below intrinsic value with earnings support",
+    "horizon": "2 months",
+    "screener_query": "Market Capitalization > 500 AND Market Capitalization < 5000 AND Price to Earning < 15 AND Return on equity > 15 AND Profit growth > 10 AND Debt to equity < 1",
+    "sort_by": "Price to Earning",
+    "sort_order": "asc",
+    "screener_url": "https://www.screener.in/screen/raw/?sort=Price+to+Earning&order=asc&query=Market+Capitalization+%3E+500+AND+Market+Capitalization+%3C+5000+AND+Price+to+Earning+%3C+15+AND+Return+on+equity+%3E+15+AND+Profit+growth+%3E+10+AND+Debt+to+equity+%3C+1"
+  },
+
+  "sector_rotation_infra": {
+    "description": "Infrastructure and capital goods stocks with order book momentum",
+    "horizon": "3 months",
+    "screener_query": "Market Capitalization > 200 AND Sales growth > 15 AND Return on capital employed > 12 AND RSI > 50 AND RSI < 72 AND Debt to equity < 1.5",
+    "sort_by": "Sales growth",
+    "sort_order": "desc",
+    "screener_url": "https://www.screener.in/screen/raw/?sort=Sales+growth&order=desc&query=Market+Capitalization+%3E+200+AND+Sales+growth+%3E+15+AND+Return+on+capital+employed+%3E+12+AND+RSI+%3E+50+AND+RSI+%3C+72+AND+Debt+to+equity+%3C+1.5"
+  },
+
+  "turnaround_candidates": {
+    "description": "Stocks recovering from a downturn with improving fundamentals",
+    "horizon": "3 months",
+    "screener_query": "Return over 1Year < 0 AND Profit growth > 10 AND Sales growth > 5 AND RSI > 45 AND RSI < 65 AND Market Capitalization > 100 AND Debt to equity < 2",
+    "sort_by": "Profit growth",
+    "sort_order": "desc",
+    "screener_url": "https://www.screener.in/screen/raw/?sort=Profit+growth&order=desc&query=Return+over+1Year+%3C+0+AND+Profit+growth+%3E+10+AND+Sales+growth+%3E+5+AND+RSI+%3E+45+AND+RSI+%3C+65+AND+Market+Capitalization+%3E+100+AND+Debt+to+equity+%3C+2"
+  },
+
+  "fii_buying_largecap": {
+    "description": "Large cap stocks with strong fundamentals and recent price strength",
+    "horizon": "2 months",
+    "screener_query": "Market Capitalization > 10000 AND RSI > 55 AND RSI < 72 AND Return over 3Months > 5 AND Return on equity > 15 AND Debt to equity < 1",
+    "sort_by": "Return over 3Months",
+    "sort_order": "desc",
+    "screener_url": "https://www.screener.in/screen/raw/?sort=Return+over+3Months&order=desc&query=Market+Capitalization+%3E+10000+AND+RSI+%3E+55+AND+RSI+%3C+72+AND+Return+over+3Months+%3E+5+AND+Return+on+equity+%3E+15+AND+Debt+to+equity+%3C+1"
+  }
+}
