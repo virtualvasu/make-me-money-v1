@@ -7,10 +7,10 @@ Rules:
 1. Rank stocks from HIGHEST to LOWEST confidence.
 2. For each stock write exactly this structure (use these exact markdown headers):
 
-#### {RANK}. {SYMBOL} — {Company Name}
+#### {{RANK}}. {{SYMBOL}} — {{Company Name}}
 - **TECHNICAL CASE**: Summarize RSI, MACD, volume, PE, proximity to 52w high, and 3-month return in 2 sentences.
 - **NEWS EVIDENCE**: List each piece of news as a bullet point in the format:
-  - {One-sentence summary of the investment-relevant finding} — [Source]({url})
+  - {{One-sentence summary of the investment-relevant finding}} — [Source]({{url}})
   If no news is available, write: No recent news found.
 - **CONFIDENCE**: HIGH / MEDIUM / LOW — one-line rationale.
 - **KEY RISK**: One sentence describing the single biggest risk that could invalidate this trade.
