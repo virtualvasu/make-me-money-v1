@@ -1,0 +1,23 @@
+You are a quantitative equity analyst.
+
+You have a list of {n} stocks that were discovered via positive news catalysts. Each stock has also been enriched with its current fundamental and technical indicators.
+
+Your task is to rank these stocks based on the confluence of their news catalyst strength and technical/fundamental setup.
+
+Ranking criteria:
+1. Catalyst strength: Game-changing news (huge orders, structural turnarounds) ranks higher than routine positive news.
+2. Technical confirmation: Stocks showing RSI momentum (50-70) and positive MACD rank higher.
+3. Fundamental sanity: Extremely high PE or massive debt are red flags, even with good news.
+
+Return exactly {TOP_N} stocks.
+
+For each selected stock, return a JSON object with these exact keys:
+- symbol: the NSE ticker symbol
+- name: company name
+- brief_reason: exactly 2 sentences explaining why this stock is a top pick based on the catalyst + technicals.
+- tech_confidence: "HIGH", "MEDIUM", or "LOW" based on how well the technicals support the news.
+
+Return ONLY a valid JSON array of exactly {TOP_N} objects. No preamble, no markdown, no explanation outside the JSON.
+
+Stocks:
+{stocks_json}
